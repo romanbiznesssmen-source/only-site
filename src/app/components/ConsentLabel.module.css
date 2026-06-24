@@ -1,0 +1,10 @@
+.link {
+  color: var(--sky);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  color: var(--sky-dark);
+}

@@ -1,0 +1,131 @@
+:root {
+  --deep: #000000;
+  --deep-rgb: 0, 0, 0;
+  --slate: #8A96A3;
+  --sky: #00AFF0;
+  --sky-rgb: 0, 175, 240;
+  --sky-dark: #0095D9;
+  --sand: #00AFF0;
+  --white: #ffffff;
+  --black: #000308;
+  --page-x: clamp(32px, 6vw, 80px);
+  --section-y: clamp(40px, 5vw, 70px);
+  --section-y-md: 36px;
+  --section-y-sm: 32px;
+  --section-y-xs: 28px;
+  --bg-white: #ffffff;
+  --bg-muted: #f4f5f7;
+  --bg-accent: #fff5f5;
+  --heading-section: clamp(48px, 6.5vw, 86px);
+  --heading-section-sm: clamp(42px, 12vw, 62px);
+  --heading-subsection: clamp(34px, 4.2vw, 48px);
+  --heading-sub: 24px;
+  --heading-card: 17px;
+  --heading-faq: 21px;
+  --heading-faq-sm: 18px;
+  --title-gradient: linear-gradient(115deg, #0095D9 0%, #00AFF0 38%, #3B82F6 72%, #7C3AED 100%);
+  --cta-gradient: linear-gradient(115deg, #0095D9 0%, #00AFF0 38%, #3B82F6 72%, #7C3AED 100%);
+  --cta-gradient-hover: linear-gradient(115deg, #00B8FF 0%, #3B82F6 45%, #8B5CF6 100%);
+}
+
+.marathon-page .gradientTitle {
+  background: var(--title-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.marathon-page .gradientCta {
+  background: var(--cta-gradient);
+  color: #ffffff;
+  box-shadow:
+    0 8px 28px rgba(59, 130, 246, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.25s ease;
+}
+
+.marathon-page .gradientCta:hover:not(:disabled) {
+  background: var(--cta-gradient-hover);
+  transform: translateY(-1px);
+  box-shadow:
+    0 12px 34px rgba(99, 102, 241, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.marathon-page .gradientCta:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow:
+    0 6px 20px rgba(59, 130, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.marathon-page {
+  font-family: var(--font-montserrat), sans-serif;
+  background: #ffffff;
+  color: #0f1419;
+}
+
+.marathon-page button {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.marathon-page .marathon-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.marathon-page .marathon-glow::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 760px);
+  height: min(72vw, 560px);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(var(--sky-rgb), 0.55) 0%,
+      rgba(var(--sky-rgb), 0.28) 32%,
+      rgba(var(--sky-rgb), 0.1) 52%,
+      transparent 72%
+    );
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.marathon-page .marathon-glow > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --page-x: clamp(28px, 4.5vw, 48px);
+    --section-y: clamp(36px, 4.5vw, 56px);
+    --section-y-md: 32px;
+    --heading-section: clamp(34px, 4.8vw, 50px);
+    --heading-section-sm: clamp(32px, 5.5vw, 44px);
+    --heading-subsection: clamp(28px, 3.8vw, 38px);
+    --heading-sub: 22px;
+    --heading-faq: 19px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --heading-section: clamp(26px, 6.8vw, 34px);
+    --heading-section-sm: clamp(24px, 6.2vw, 30px);
+    --heading-subsection: clamp(22px, 5.2vw, 28px);
+    --heading-sub: 17px;
+    --heading-card: 14px;
+    --heading-faq: 16px;
+    --heading-faq-sm: 15px;
+  }
+}

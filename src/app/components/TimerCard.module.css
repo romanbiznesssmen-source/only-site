@@ -1,0 +1,80 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: rgba(255,255,255,0.97);
+  border: none;
+  border-radius: 20px;
+  padding: 22px 26px;
+  min-width: 360px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+  font-family: var(--font-montserrat), sans-serif;
+  color: inherit;
+  transition: transform 0.22s cubic-bezier(0.16,1,0.3,1), box-shadow 0.22s;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+}
+.card:disabled {
+  cursor: wait;
+  opacity: 0.92;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 16px 56px rgba(0,0,0,0.45); }
+
+.cardText { flex: 1; }
+.cardLabel {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--deep);
+  margin-top: 10px;
+  line-height: 1.35;
+}
+.timer {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--sky);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.timer b { font-weight: 800; }
+.timer span { font-size: 17px; font-weight: 500; color: var(--slate); margin: 0 5px 0 2px; }
+
+.cardArrow {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: var(--deep);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.card:hover .cardArrow { background: var(--sky); transform: rotate(45deg); box-shadow: 0 4px 16px rgba(var(--sky-rgb), 0.32); }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card {
+    min-width: unset;
+    width: 100%;
+    flex: 1 1 100%;
+    padding: 18px 20px;
+    gap: 18px;
+  }
+
+  .timer { font-size: 26px; }
+  .timer span { font-size: 16px; }
+  .cardLabel { font-size: 13px; margin-top: 8px; }
+  .cardArrow { width: 46px; height: 46px; }
+}
+
+@media (max-width: 768px) {
+  .card {
+    min-width: unset;
+    width: 100%;
+    padding: 18px 18px;
+    border-radius: 16px;
+    gap: 16px;
+  }
+  .cardLabel { margin-top: 8px; font-size: 13px; }
+  .timer { font-size: 24px; }
+  .timer span { font-size: 15px; }
+  .cardArrow { width: 46px; height: 46px; }
+}

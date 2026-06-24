@@ -1,0 +1,86 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mark {
+  width: auto;
+  height: var(--logo-size, 44px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.05;
+}
+
+.line1 {
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 800;
+  font-size: var(--logo-text-size, 17px);
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.line2 {
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 600;
+  font-size: var(--logo-sub-size, 12px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+
+.darkText .line1 { color: var(--deep); }
+.darkText .line2 { color: var(--sky); }
+
+.lg {
+  --logo-size: 72px;
+  --logo-text-size: clamp(28px, 4vw, 44px);
+  --logo-sub-size: clamp(14px, 2vw, 18px);
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+}
+
+.lg .text {
+  align-items: center;
+  gap: 6px;
+}
+
+.sm {
+  --logo-size: 36px;
+  --logo-text-size: 14px;
+  --logo-sub-size: 10px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo:not(.lg) {
+    --logo-size: 40px;
+    --logo-text-size: 15px;
+    --logo-sub-size: 11px;
+    gap: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo:not(.lg) {
+    --logo-size: 38px;
+    --logo-text-size: 14px;
+    --logo-sub-size: 10px;
+    gap: 10px;
+  }
+
+  .lg {
+    --logo-size: 56px;
+    --logo-text-size: clamp(22px, 5.5vw, 30px);
+    --logo-sub-size: clamp(11px, 2.5vw, 13px);
+    gap: 14px;
+  }
+}
