@@ -5,7 +5,7 @@ import { SITE_NAME } from './site'
 import styles from './not-found.module.css'
 
 export const metadata: Metadata = {
-  title: 'Сторінку не знайдено',
+  title: 'Page Not Found',
   robots: { index: false, follow: false },
 }
 

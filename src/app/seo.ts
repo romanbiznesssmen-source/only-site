@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import {
-  MARATHON_PRICE,
   SITE_DESCRIPTION,
   SITE_HERO_IMAGE,
   SITE_KEYWORDS,
@@ -13,7 +12,7 @@ const ogImage = {
   url: SITE_HERO_IMAGE,
   width: 1200,
   height: 630,
-  alt: `Марафон англійської ${SITE_NAME}`,
+  alt: `${SITE_NAME} — exclusive members-only content`,
 }
 
 export const rootMetadata: Metadata = {
@@ -28,7 +27,7 @@ export const rootMetadata: Metadata = {
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
-  category: 'education',
+  category: 'entertainment',
   formatDetection: {
     email: false,
     address: false,
@@ -37,12 +36,12 @@ export const rootMetadata: Metadata = {
   alternates: {
     canonical: '/',
     languages: {
-      'uk-UA': '/',
+      'en-US': '/',
     },
   },
   openGraph: {
     type: 'website',
-    locale: 'uk_UA',
+    locale: 'en_US',
     url: SITE_URL,
     siteName: SITE_NAME,
     title: SITE_TITLE,
@@ -65,9 +64,5 @@ export const rootMetadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  other: {
-    'product:price:amount': String(MARATHON_PRICE),
-    'product:price:currency': 'UAH',
   },
 }

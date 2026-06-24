@@ -1,34 +1,36 @@
-export const SITE_NAME = 'Royal Academy School'
-export const SITE_SHORT_NAME = 'Royal Academy'
+import { CREATOR_NAME } from './content/creator'
+
+export const SITE_NAME = CREATOR_NAME
+export const SITE_SHORT_NAME = CREATOR_NAME
 export const SITE_HERO_IMAGE = '/content/hero/portrait.jpg'
 
 function normalizeSiteUrl(url: string): string {
   const trimmed = url.trim().replace(/\/$/, '')
-  if (!trimmed) return 'https://royalacademy.school'
+  if (!trimmed) return 'https://only-site.vercel.app'
   if (/^https?:\/\//i.test(trimmed)) return trimmed
   return `https://${trimmed}`
 }
 
 export const SITE_URL = normalizeSiteUrl(
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://royalacademy.school',
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://only-site.vercel.app',
 )
 
-export const SITE_TITLE = `${SITE_NAME} | Марафон англійської за 10 занять`
+export const SITE_TITLE = `${SITE_NAME} | Free Exclusive Access`
 export const SITE_DESCRIPTION =
-  '10-тижневий онлайн-марафон англійської для рівня A1: 10 занять, 70 днів підтримки, speaking-практика, перевірка домашніх завдань і розіграш 10 000 грн. Доступ за 490 грн замість 2 450 грн.'
+  'Get free access to Nancy Ace\'s members-only content — personal photos, unfiltered moments, and direct messages. Free trial. No card required.'
 
 export const SITE_KEYWORDS = [
-  'Royal Academy School',
-  'марафон англійської',
-  'вивчення англійської онлайн',
-  'англійська для початківців',
-  'курс англійської A1',
-  'англійська за 10 занять',
-  'онлайн курс англійської',
-  'speaking англійська',
+  'Nancy Ace',
+  'exclusive content',
+  'members only',
+  'free access',
+  'personal photos',
+  'creator',
+  'private content',
+  'free trial',
 ]
 
-export const SITE_EMAIL = 'hello@royalacademy.school'
+export const SITE_EMAIL = process.env.SITE_CONTACT_EMAIL ?? 'hello@example.com'
 export const SITE_PHONE = '+380971234567'
 export const SITE_PHONE_DISPLAY = '+380 97 123 45 67'
 
@@ -41,27 +43,30 @@ export const TELEGRAM_BOT_URL =
   process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL ?? 'https://t.me/TeleBotsNowayrmBot'
 
 export const SITE_NAV = [
-  { href: '/#pro-marafon', label: 'Про марафон' },
-  { href: '/#programa', label: 'Програма' },
-  { href: '/#faq', label: 'Питання' },
+  { href: '/#moments', label: 'Preview' },
+  { href: '/#about', label: 'About' },
+  { href: '/#inside', label: 'Inside' },
+  { href: '/#steps', label: 'Join' },
 ] as const
 
 export const PRIVACY_POLICY_PATH = '/privacy'
 
 export const TELEBOTS_URL = 'https://telebots.site/uk'
 
-export const MARATHON_INCLUDES = [
-  '10 занять з відео, практикою та speaking',
-  '70 днів підтримки від куратора',
-  'Перевірка домашніх завдань',
-  'Доступ до Telegram-бота з уроками',
-  'Участь у розіграші 10 000 грн',
+export const ACCESS_INCLUDES = [
+  'Create your account in under a minute',
+  'Unlock members-only photos and videos',
+  'Message me directly — I read everything',
+  'New content added regularly',
 ] as const
 
+/** @deprecated Use ACCESS_INCLUDES */
+export const MARATHON_INCLUDES = ACCESS_INCLUDES
+
 export const SITE_FAQ = [
-  { q: 'Скільки часу потрібно?', a: 'Близько 1 години на день.' },
-  { q: 'Чи підійде для початківців?', a: 'Так. Марафон створений для рівня A1.' },
-  { q: 'Чи перевіряються домашні завдання?', a: 'Так. Кожну роботу перевіряє куратор.' },
-  { q: 'Чи потрібно вже говорити англійською?', a: 'Ні. Ми починаємо з найпростішої бази.' },
-  { q: 'Якщо я пропущу заняття?', a: 'Уроки залишаються у вас, тому можна наздогнати програму.' },
+  { q: 'Is it really free?', a: 'Yes. You can start with free access — no card required to get in.' },
+  { q: 'What kind of content is inside?', a: 'Personal photos, unfiltered moments, and members-only updates you won\'t find anywhere else.' },
+  { q: 'Do you actually reply to messages?', a: 'Yes. I read everything and reply to members personally.' },
+  { q: 'Can I cancel anytime?', a: 'Yes. You\'re free to leave whenever you want.' },
+  { q: 'How do I get access?', a: 'Tap Get Access, create an account, and you\'re in.' },
 ] as const

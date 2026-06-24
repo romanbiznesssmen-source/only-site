@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
-import { SITE_NAME } from '../site'
 
 export const metadata: Metadata = {
-  title: `Оплата успішна | ${SITE_NAME}`,
+  title: 'Access Confirmed',
   robots: { index: false, follow: false },
 }
 

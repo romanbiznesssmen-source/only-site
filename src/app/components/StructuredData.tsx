@@ -1,14 +1,11 @@
+import { CREATOR_NAME } from '../content/creator'
 import {
-  MARATHON_PRICE,
   SITE_DESCRIPTION,
-  SITE_EMAIL,
   SITE_FAQ,
   SITE_HERO_IMAGE,
   SITE_NAME,
-  SITE_PHONE,
   SITE_TITLE,
   SITE_URL,
-  TELEGRAM_BOT_URL,
 } from '../site'
 
 function JsonLd({ data }: { data: Record<string, unknown> }) {
@@ -21,71 +18,36 @@ function JsonLd({ data }: { data: Record<string, unknown> }) {
 }
 
 export default function StructuredData() {
-  const organization = {
+  const person = {
     '@context': 'https://schema.org',
-    '@type': 'EducationalOrganization',
-    name: SITE_NAME,
+    '@type': 'Person',
+    '@id': `${SITE_URL}#person`,
+    name: CREATOR_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}${SITE_HERO_IMAGE}`,
     image: `${SITE_URL}${SITE_HERO_IMAGE}`,
-    email: SITE_EMAIL,
-    telephone: SITE_PHONE,
     description: SITE_DESCRIPTION,
-    sameAs: [TELEGRAM_BOT_URL],
   }
 
   const website = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${SITE_URL}#website`,
     name: SITE_NAME,
     url: SITE_URL,
-    inLanguage: 'uk-UA',
+    inLanguage: 'en',
     description: SITE_DESCRIPTION,
-    publisher: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      logo: `${SITE_URL}${SITE_HERO_IMAGE}`,
-    },
-  }
-
-  const course = {
-    '@context': 'https://schema.org',
-    '@type': 'Course',
-    name: '10-тижневий марафон англійської',
-    description: SITE_DESCRIPTION,
-    provider: {
-      '@type': 'EducationalOrganization',
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
-    educationalLevel: 'Beginner',
-    inLanguage: 'uk',
-    offers: {
-      '@type': 'Offer',
-      price: String(MARATHON_PRICE),
-      priceCurrency: 'UAH',
-      availability: 'https://schema.org/InStock',
-      url: `${SITE_URL}/#kontakt`,
-    },
-    hasCourseInstance: {
-      '@type': 'CourseInstance',
-      courseMode: 'online',
-      courseWorkload: 'PT1H',
-    },
+    publisher: { '@id': `${SITE_URL}#person` },
   }
 
   const webPage = {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
+    '@type': 'ProfilePage',
     name: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
-    inLanguage: 'uk-UA',
+    inLanguage: 'en',
     isPartOf: { '@id': `${SITE_URL}#website` },
-    about: {
-      '@type': 'Thing',
-      name: 'Марафон англійської мови',
-    },
+    about: { '@id': `${SITE_URL}#person` },
     primaryImageOfPage: `${SITE_URL}${SITE_HERO_IMAGE}`,
   }
 
@@ -104,9 +66,8 @@ export default function StructuredData() {
 
   return (
     <>
-      <JsonLd data={{ ...website, '@id': `${SITE_URL}#website` }} />
-      <JsonLd data={organization} />
-      <JsonLd data={course} />
+      <JsonLd data={person} />
+      <JsonLd data={website} />
       <JsonLd data={webPage} />
       <JsonLd data={faqPage} />
     </>

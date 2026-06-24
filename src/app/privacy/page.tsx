@@ -6,8 +6,8 @@ import { PRIVACY_POLICY_PATH, SITE_EMAIL, SITE_NAME, SITE_PHONE_DISPLAY, SITE_UR
 import styles from './privacy.module.css'
 
 export const metadata: Metadata = {
-  title: 'Політика конфіденційності',
-  description: `Політика конфіденційності ${SITE_NAME}: як ми збираємо, використовуємо та захищаємо ваші персональні дані.`,
+  title: 'Privacy Policy',
+  description: `Privacy policy for ${SITE_NAME}: how we collect, use, and protect your personal data.`,
   alternates: { canonical: `${SITE_URL}${PRIVACY_POLICY_PATH}` },
   robots: { index: true, follow: true },
 }
