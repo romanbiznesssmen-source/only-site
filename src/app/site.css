@@ -77,38 +77,6 @@
   font-family: var(--font-montserrat), sans-serif;
 }
 
-.marathon-page .marathon-glow {
-  position: relative;
-  overflow: hidden;
-}
-
-.marathon-page .marathon-glow::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: min(92vw, 760px);
-  height: min(72vw, 560px);
-  border-radius: 50%;
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(var(--sky-rgb), 0.55) 0%,
-      rgba(var(--sky-rgb), 0.28) 32%,
-      rgba(var(--sky-rgb), 0.1) 52%,
-      transparent 72%
-    );
-  filter: blur(48px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.marathon-page .marathon-glow > * {
-  position: relative;
-  z-index: 1;
-}
-
 @media (min-width: 769px) and (max-width: 1024px) {
   :root {
     --page-x: clamp(28px, 4.5vw, 48px);

@@ -40,7 +40,7 @@ export type PaymentNotificationData = {
 
 export async function sendPaymentNotification(payment: PaymentNotificationData): Promise<void> {
   const lines = [
-    '💳 <b>Нова оплата марафону</b>',
+    '💳 <b>New members access payment</b>',
     '',
     `👤 <b>Ім'я:</b> ${escapeHtml(payment.name)}`,
   ]
@@ -58,27 +58,6 @@ export async function sendPaymentNotification(payment: PaymentNotificationData):
     `🧾 <b>Рахунок:</b> ${escapeHtml(payment.invoiceId)}`,
     `🔖 <b>Reference:</b> ${escapeHtml(payment.reference)}`,
   )
-
-  await sendTelegramMessage(lines.join('\n'))
-}
-
-export type ContactFormData = {
-  name: string
-  phone: string
-  comment: string
-}
-
-export async function sendContactNotification(data: ContactFormData): Promise<void> {
-  const lines = [
-    '📩 <b>Нова заявка з сайту</b>',
-    '',
-    `👤 <b>Ім'я:</b> ${escapeHtml(data.name)}`,
-    `📞 <b>Телефон:</b> ${escapeHtml(data.phone)}`,
-  ]
-
-  if (data.comment.trim()) {
-    lines.push(`💬 <b>Коментар:</b> ${escapeHtml(data.comment)}`)
-  }
 
   await sendTelegramMessage(lines.join('\n'))
 }

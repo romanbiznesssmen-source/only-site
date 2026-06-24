@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import { PaymentProvider } from '../components/PaymentProvider'
+import Link from 'next/link'
 import { PRIVACY_POLICY_PATH, SITE_EMAIL, SITE_NAME, SITE_PHONE_DISPLAY, SITE_URL } from '../site'
 import styles from './privacy.module.css'
 
@@ -12,129 +10,124 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-const UPDATED = '15 червня 2026'
+const UPDATED = 'June 15, 2026'
 
 export default function PrivacyPage() {
   return (
-    <PaymentProvider>
-      <div className="marathon-page">
-        <Navbar />
+    <div className="marathon-page">
+      <main className={styles.page}>
+        <div className={styles.inner}>
+          <Link href="/" className={styles.backLink}>
+            ← Back to home
+          </Link>
 
-        <main className={styles.page}>
-          <article className={styles.inner}>
+          <article>
             <header className={styles.header}>
-              <h1 className={styles.title}>Політика конфіденційності</h1>
-              <p className={styles.updated}>Останнє оновлення: {UPDATED}</p>
+              <h1 className={styles.title}>Privacy Policy</h1>
+              <p className={styles.updated}>Last updated: {UPDATED}</p>
             </header>
 
             <div className={styles.content}>
               <section className={styles.section}>
                 <p>
-                  Ця Політика конфіденційності описує, як {SITE_NAME} («ми», «школа») збирає,
-                  використовує та захищає персональні дані користувачів сайту {SITE_URL} під час
-                  реєстрації на марафон англійської, оформлення оплати та надсилання заявок.
+                  This Privacy Policy describes how {SITE_NAME} (&quot;we&quot;) collects,
+                  uses, and protects personal data of users of {SITE_URL} when you sign up
+                  for access, complete a payment, or submit a request.
                 </p>
               </section>
 
               <section className={styles.section}>
-                <h2>1. Які дані ми збираємо</h2>
-                <p>Ми можемо отримувати такі персональні дані:</p>
+                <h2>1. Data we collect</h2>
+                <p>We may receive the following personal data:</p>
                 <ul>
-                  <li>ім&apos;я;</li>
-                  <li>номер телефону або Telegram-контакт;</li>
-                  <li>коментар до заявки (за бажанням);</li>
-                  <li>дані про оплату: номер рахунку, сума, статус транзакції (без збереження даних банківської картки на нашому сайті).</li>
+                  <li>name;</li>
+                  <li>phone number or Telegram contact;</li>
+                  <li>payment data: invoice number, amount, transaction status (we do not store card details on our site).</li>
                 </ul>
               </section>
 
               <section className={styles.section}>
-                <h2>2. Мета обробки даних</h2>
-                <p>Персональні дані використовуються для:</p>
+                <h2>2. Why we use your data</h2>
+                <p>Personal data is used to:</p>
                 <ul>
-                  <li>оформлення доступу до марафону та проведення оплати;</li>
-                  <li>зв&apos;язку з вами щодо участі в марафоні;</li>
-                  <li>надання доступу до матеріалів і Telegram-бота;</li>
-                  <li>обробки заявок і відповідей на ваші запитання;</li>
-                  <li>виконання вимог законодавства України.</li>
+                  <li>provide access to exclusive content and process payments;</li>
+                  <li>contact you about your membership;</li>
+                  <li>deliver content and Telegram bot access;</li>
+                  <li>respond to your requests;</li>
+                  <li>comply with applicable law.</li>
                 </ul>
               </section>
 
               <section className={styles.section}>
-                <h2>3. Правова підстава</h2>
+                <h2>3. Legal basis</h2>
                 <p>
-                  Ми обробляємо ваші дані на підставі вашої згоди, яку ви надаєте під час
-                  заповнення форми або оформлення оплати, а також для виконання договору
-                  про надання освітніх послуг.
+                  We process your data based on your consent when you submit a form or
+                  complete a payment, and to fulfill our agreement to provide access to
+                  exclusive content.
                 </p>
               </section>
 
               <section className={styles.section}>
-                <h2>4. Передача даних третім сторонам</h2>
-                <p>Для роботи сервісу дані можуть передаватися:</p>
+                <h2>4. Third-party services</h2>
+                <p>Data may be shared with:</p>
                 <ul>
-                  <li><strong>Monobank</strong> — для проведення онлайн-оплати;</li>
-                  <li><strong>Telegram</strong> — для сповіщень команди школи та надання доступу до бота;</li>
-                  <li><strong>Vercel</strong> — для хостингу сайту.</li>
+                  <li><strong>Monobank</strong> — online payment processing;</li>
+                  <li><strong>Telegram</strong> — notifications and bot access;</li>
+                  <li><strong>Vercel</strong> — website hosting.</li>
                 </ul>
                 <p>
-                  Ми не продаємо і не передаємо ваші персональні дані третім особам у
-                  маркетингових цілях.
+                  We do not sell or share your personal data with third parties for marketing.
                 </p>
               </section>
 
               <section className={styles.section}>
-                <h2>5. Зберігання даних</h2>
+                <h2>5. Data retention</h2>
                 <p>
-                  Дані з форм і підтвердження оплат обробляються лише стільки, скільки
-                  потрібно для надання послуги, супроводу марафону та вирішення можливих
-                  питань. Платіжна інформація обробляється платіжним провайдером Monobank
-                  відповідно до його політики безпеки.
+                  Form and payment data is kept only as long as needed to provide access,
+                  support your membership, and resolve issues. Payment information is
+                  processed by Monobank under its security policy.
                 </p>
               </section>
 
               <section className={styles.section}>
-                <h2>6. Ваші права</h2>
-                <p>Ви маєте право:</p>
+                <h2>6. Your rights</h2>
+                <p>You have the right to:</p>
                 <ul>
-                  <li>дізнатися, які дані про вас обробляються;</li>
-                  <li>вимагати виправлення або видалення даних;</li>
-                  <li>відкликати згоду на обробку персональних даних;</li>
-                  <li>звернутися зі скаргою до Уповноваженого ВРУ з прав людини.</li>
+                  <li>know what data we process about you;</li>
+                  <li>request correction or deletion of your data;</li>
+                  <li>withdraw consent for data processing;</li>
+                  <li>file a complaint with your local data protection authority.</li>
                 </ul>
               </section>
 
               <section className={styles.section}>
-                <h2>7. Захист даних</h2>
+                <h2>7. Security</h2>
                 <p>
-                  Ми застосовуємо організаційні та технічні заходи для захисту персональних
-                  даних від несанкціонованого доступу, втрати або розголошення.
+                  We use organizational and technical measures to protect personal data from
+                  unauthorized access, loss, or disclosure.
                 </p>
               </section>
 
               <section className={styles.section}>
-                <h2>8. Контакти</h2>
-                <p>
-                  З питань щодо персональних даних звертайтесь:
-                </p>
+                <h2>8. Contact</h2>
+                <p>For privacy questions, contact us:</p>
                 <ul>
                   <li>Email: <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a></li>
-                  <li>Телефон: {SITE_PHONE_DISPLAY}</li>
+                  <li>Phone: {SITE_PHONE_DISPLAY}</li>
                 </ul>
               </section>
 
               <section className={styles.section}>
-                <h2>9. Зміни до політики</h2>
+                <h2>9. Policy updates</h2>
                 <p>
-                  Ми можемо оновлювати цю Політику конфіденційності. Актуальна версія
-                  завжди доступна на цій сторінці з указанням дати останнього оновлення.
+                  We may update this Privacy Policy. The current version is always available
+                  on this page with the date of the last update.
                 </p>
               </section>
             </div>
           </article>
-        </main>
-
-        <Footer />
-      </div>
-    </PaymentProvider>
+        </div>
+      </main>
+    </div>
   )
 }

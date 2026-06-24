@@ -36,8 +36,7 @@ export const SITE_PHONE_DISPLAY = '+380 97 123 45 67'
 
 export const SITE_THEME_COLOR = '#00AFF0'
 
-export const MARATHON_PRICE = 490
-export const MARATHON_PRICE_OLD = 2450
+export const ACCESS_PRICE = 490
 
 export const TELEGRAM_BOT_URL =
   process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL ?? 'https://t.me/TeleBotsNowayrmBot'
@@ -51,17 +50,12 @@ export const SITE_NAV = [
 
 export const PRIVACY_POLICY_PATH = '/privacy'
 
-export const TELEBOTS_URL = 'https://telebots.site/uk'
-
 export const ACCESS_INCLUDES = [
   'Create your account in under a minute',
   'Unlock members-only photos and videos',
   'Message me directly — I read everything',
   'New content added regularly',
 ] as const
-
-/** @deprecated Use ACCESS_INCLUDES */
-export const MARATHON_INCLUDES = ACCESS_INCLUDES
 
 export const SITE_FAQ = [
   { q: 'Is it really free?', a: 'Yes. You can start with free access — no card required to get in.' },

@@ -8,7 +8,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import { MARATHON_PRICE } from '../site'
+import { ACCESS_PRICE } from '../site'
 import ConsentLabel from './ConsentLabel'
 import { startPayment } from '@/lib/startPayment'
 import styles from './PaymentModal.module.css'
@@ -80,12 +80,12 @@ export function PaymentProvider({ children }: { children: ReactNode }) {
     const contact = form.contact.trim()
 
     if (!name) {
-      setError('Вкажіть ім\'я')
+      setError('Please enter your name')
       return
     }
 
     if (!contact) {
-      setError('Вкажіть телефон або Telegram')
+      setError('Please enter your phone or Telegram')
       return
     }
 
@@ -97,7 +97,7 @@ export function PaymentProvider({ children }: { children: ReactNode }) {
     try {
       await startPayment({ name, contact })
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Сталася помилка. Спробуйте ще раз.')
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
       setLoading(false)
     }
   }
@@ -122,13 +122,13 @@ export function PaymentProvider({ children }: { children: ReactNode }) {
             <div className={styles.header}>
               <div>
                 <h2 id="payment-modal-title" className={styles.title}>
-                  Оформлення доступу
+                  Get access
                 </h2>
                 <p className={styles.subtitle}>
-                  Заповніть дані — після цього відкриється оплата {MARATHON_PRICE} грн
+                  Fill in your details — you&apos;ll be redirected to pay {ACCESS_PRICE} UAH
                 </p>
               </div>
-              <button type="button" className={styles.close} onClick={close} aria-label="Закрити">
+              <button type="button" className={styles.close} onClick={close} aria-label="Close">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
                   <path d="M4 4 L14 14 M14 4 L4 14" />
                 </svg>
@@ -137,11 +137,11 @@ export function PaymentProvider({ children }: { children: ReactNode }) {
 
             <form className={styles.form} onSubmit={handleSubmit} noValidate>
               <div className={styles.field}>
-                <label htmlFor="payment-name">Ім&apos;я</label>
+                <label htmlFor="payment-name">Name</label>
                 <input
                   id="payment-name"
                   type="text"
-                  placeholder="Введіть ім'я"
+                  placeholder="Your name"
                   value={form.name}
                   onChange={setField('name')}
                   required
@@ -150,11 +150,11 @@ export function PaymentProvider({ children }: { children: ReactNode }) {
               </div>
 
               <div className={styles.field}>
-                <label htmlFor="payment-contact">Телефон або Telegram</label>
+                <label htmlFor="payment-contact">Phone or Telegram</label>
                 <input
                   id="payment-contact"
                   type="text"
-                  placeholder="+380... або @username"
+                  placeholder="+380... or @username"
                   value={form.contact}
                   onChange={setField('contact')}
                   required
@@ -176,7 +176,7 @@ export function PaymentProvider({ children }: { children: ReactNode }) {
 
               <button type="submit" className={styles.submit} disabled={!form.consent || loading}>
                 {loading ? (
-                  'Перенаправлення на оплату…'
+                  'Redirecting to payment…'
                 ) : (
                   <>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -184,7 +184,7 @@ export function PaymentProvider({ children }: { children: ReactNode }) {
                       <path d="M2 10h20" />
                       <path d="M6 15h4" />
                     </svg>
-                    Перейти до оплати {MARATHON_PRICE} грн
+                    Continue to payment — {ACCESS_PRICE} UAH
                   </>
                 )}
               </button>

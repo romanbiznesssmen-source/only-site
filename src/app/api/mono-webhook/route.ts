@@ -7,7 +7,7 @@ import {
 } from '@/lib/mono'
 import { extractCustomerFromMonoPayload } from '@/lib/extractCustomerFromMonoPayload'
 import { sendPaymentNotification } from '@/lib/telegram'
-import { MARATHON_PRICE } from '@/app/site'
+import { ACCESS_PRICE } from '@/app/site'
 
 function resolveCustomer(
   payload: MonoWebhookPayload,
@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
           name: customer?.name ?? 'Не вказано',
           phone: customer?.phone || '—',
           telegram: customer?.telegram || '',
-          amount: amountSource ? amountSource / 100 : MARATHON_PRICE,
+          amount: amountSource ? amountSource / 100 : ACCESS_PRICE,
           invoiceId,
           reference,
         })

@@ -16,8 +16,7 @@ export default function BrandLogo({
 }: Props) {
   const content = (
     <span className={`${styles.text} ${variant === 'dark' ? styles.darkText : ''}`}>
-      <span className={styles.line1}>Royal Academy</span>
-      <span className={styles.line2}>School</span>
+      <span className={styles.line1}>{SITE_NAME}</span>
     </span>
   )
 

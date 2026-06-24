@@ -3,14 +3,14 @@ import crypto from 'crypto'
 import { createMonoInvoice } from '@/lib/mono'
 import { buildPaymentDestination, encodePaymentMeta } from '@/lib/paymentMeta'
 import { splitContact } from '@/lib/parseContact'
-import { MARATHON_PRICE, SITE_NAME, SITE_URL } from '@/app/site'
+import { ACCESS_PRICE, SITE_NAME, SITE_URL } from '@/app/site'
 
 export async function POST(req: NextRequest) {
   try {
     const monoToken = process.env.MONO_TOKEN
     if (!monoToken) {
       return NextResponse.json(
-        { error: 'Оплата тимчасово недоступна. Зв\'яжіться з нами.' },
+        { error: 'Payments are temporarily unavailable. Please try again later.' },
         { status: 500 }
       )
     }
@@ -21,19 +21,19 @@ export async function POST(req: NextRequest) {
     const { phone, telegram } = splitContact(contact)
 
     if (!name) {
-      return NextResponse.json({ error: 'Вкажіть ім\'я' }, { status: 400 })
+      return NextResponse.json({ error: 'Please enter your name' }, { status: 400 })
     }
 
     if (!contact) {
-      return NextResponse.json({ error: 'Вкажіть телефон або Telegram' }, { status: 400 })
+      return NextResponse.json({ error: 'Please enter your phone or Telegram' }, { status: 400 })
     }
 
     const reference = crypto.randomUUID()
-    const amountMinor = MARATHON_PRICE * 100
+    const amountMinor = ACCESS_PRICE * 100
     const siteUrl = SITE_URL
     const customer = { name, phone, telegram }
     const meta = encodePaymentMeta(customer)
-    const destination = buildPaymentDestination(`Марафон англійської | ${SITE_NAME}`, customer)
+    const destination = buildPaymentDestination(`Members access | ${SITE_NAME}`, customer)
 
     const invoice = await createMonoInvoice(monoToken, {
       amount: amountMinor,
@@ -44,11 +44,11 @@ export async function POST(req: NextRequest) {
         comment: meta,
         basketOrder: [
           {
-            name: '10-тижневий марафон англійської',
+            name: `Exclusive members access — ${SITE_NAME}`,
             qty: 1,
             sum: amountMinor,
             total: amountMinor,
-            unit: 'доступ',
+            unit: 'access',
             code: meta,
           },
         ],
@@ -66,7 +66,7 @@ export async function POST(req: NextRequest) {
     })
   } catch (error) {
     console.error('[payment/create]', error)
-    const message = error instanceof Error ? error.message : 'Помилка створення оплати'
+    const message = error instanceof Error ? error.message : 'Could not create payment'
     return NextResponse.json({ error: message }, { status: 500 })
   }
 }
