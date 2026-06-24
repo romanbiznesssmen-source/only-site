@@ -4,7 +4,6 @@ import {
   SITE_DESCRIPTION,
   SITE_HERO_IMAGE,
   SITE_KEYWORDS,
-  SITE_LOGO,
   SITE_NAME,
   SITE_TITLE,
   SITE_URL,
@@ -66,10 +65,6 @@ export const rootMetadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  icons: {
-    icon: SITE_LOGO,
-    apple: SITE_LOGO,
   },
   other: {
     'product:price:amount': String(MARATHON_PRICE),

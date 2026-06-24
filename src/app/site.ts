@@ -1,9 +1,6 @@
 export const SITE_NAME = 'Royal Academy School'
 export const SITE_SHORT_NAME = 'Royal Academy'
-export const SITE_LOGO = '/images/PNG-зображення 1.png'
 export const SITE_HERO_IMAGE = '/content/hero/portrait.jpg'
-export const SITE_CONTACT_IMAGE = '/images/3D4A6903.JPG'
-export const SITE_MARATHON_STEPS_IMAGE = '/images/024.JPG'
 
 function normalizeSiteUrl(url: string): string {
   const trimmed = url.trim().replace(/\/$/, '')

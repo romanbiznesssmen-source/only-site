@@ -4,7 +4,6 @@ import {
   SITE_EMAIL,
   SITE_FAQ,
   SITE_HERO_IMAGE,
-  SITE_LOGO,
   SITE_NAME,
   SITE_PHONE,
   SITE_TITLE,
@@ -27,7 +26,7 @@ export default function StructuredData() {
     '@type': 'EducationalOrganization',
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}${SITE_LOGO}`,
+    logo: `${SITE_URL}${SITE_HERO_IMAGE}`,
     image: `${SITE_URL}${SITE_HERO_IMAGE}`,
     email: SITE_EMAIL,
     telephone: SITE_PHONE,
@@ -45,7 +44,7 @@ export default function StructuredData() {
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,
-      logo: `${SITE_URL}${SITE_LOGO}`,
+      logo: `${SITE_URL}${SITE_HERO_IMAGE}`,
     },
   }
 

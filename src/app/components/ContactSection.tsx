@@ -1,8 +1,7 @@
 'use client'
-import Image from 'next/image'
 import { useState } from 'react'
 import ConsentLabel from './ConsentLabel'
-import { SITE_CONTACT_IMAGE, SITE_NAME } from '../site'
+import { SITE_NAME } from '../site'
 import styles from './ContactSection.module.css'
 
 type FormState = { name: string; phone: string; comment: string; consent: boolean }
@@ -60,16 +59,6 @@ export default function ContactSection() {
           <p className={styles.lead}>
             Маєте питання про марафон? Залиште контакти — ми зв&apos;яжемося з вами найближчим часом.
           </p>
-          <div className={styles.imgWrap}>
-            <Image
-              src={SITE_CONTACT_IMAGE}
-              alt={`Онлайн-навчання англійської в ${SITE_NAME}`}
-              fill
-              sizes="(max-width: 900px) 100vw, 50vw"
-              className={styles.img}
-              loading="lazy"
-            />
-          </div>
         </div>
 
         <div className={styles.right}>

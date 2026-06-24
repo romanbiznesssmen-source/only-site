@@ -150,8 +150,10 @@ export default function RecentMoments() {
     <section className={styles.section} id="moments" aria-labelledby="moments-title">
       <div className={styles.inner}>
         <header className={styles.header}>
-          <h2 id="moments-title" className={`${styles.title} gradientTitle`}>
-            A <em className={styles.titleEm}>glimpse</em> inside
+          <h2 id="moments-title" className={styles.title}>
+            <span className="gradientTitle">A</span>{' '}
+            <em className={styles.titleEm}>glimpse</em>{' '}
+            <span className="gradientTitle">inside</span>
           </h2>
         </header>
 

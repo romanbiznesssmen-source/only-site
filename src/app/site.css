@@ -36,6 +36,10 @@
   color: transparent;
 }
 
+.marathon-page span.gradientTitle {
+  display: inline-block;
+}
+
 .marathon-page .gradientCta {
   background: var(--cta-gradient);
   color: #ffffff;

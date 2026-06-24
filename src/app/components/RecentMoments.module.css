@@ -26,6 +26,8 @@
   font-family: var(--font-montserrat), Georgia, serif;
   font-style: italic;
   font-weight: 500;
+  color: #000000;
+  -webkit-text-fill-color: #000000;
   position: relative;
   display: inline-block;
   padding-bottom: 6px;

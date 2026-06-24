@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next'
 import {
   SITE_DESCRIPTION,
-  SITE_LOGO,
   SITE_NAME,
   SITE_SHORT_NAME,
   SITE_THEME_COLOR,
@@ -17,12 +16,5 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: '#ffffff',
     theme_color: SITE_THEME_COLOR,
     lang: 'uk',
-    icons: [
-      {
-        src: SITE_LOGO,
-        sizes: '512x512',
-        type: 'image/png',
-      },
-    ],
   }
 }

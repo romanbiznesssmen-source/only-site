@@ -2,8 +2,7 @@ import CtaBlock from './CtaBlock'
 import PaymentButton from './PaymentButton'
 import ScenarioGrid from './ScenarioGrid'
 import FaqAccordion from './FaqAccordion'
-import Image from 'next/image'
-import { SITE_FAQ, SITE_MARATHON_STEPS_IMAGE, SITE_NAME } from '../site'
+import { SITE_FAQ, SITE_NAME } from '../site'
 import styles from './MarathonSections.module.css'
 
 const BENEFITS = [
@@ -275,16 +274,6 @@ export default function MarathonSections() {
       <section className={`${styles.section} ${styles.whiteFromDark} ${styles.stepsSection}`}>
         <div className={styles.container}>
           <SectionTitle>Як проходить марафон</SectionTitle>
-          <div className={styles.stepsPhotoWrap}>
-            <Image
-              src={SITE_MARATHON_STEPS_IMAGE}
-              alt={`Як проходить марафон англійської в ${SITE_NAME}`}
-              fill
-              sizes="(max-width: 768px) 100vw, 1240px"
-              className={styles.stepsPhoto}
-              loading="lazy"
-            />
-          </div>
           <ol className={styles.timeline}>
             {STEPS.map((step, i) => (
               <li key={step}>
