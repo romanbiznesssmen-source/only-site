@@ -151,9 +151,8 @@ export default function RecentMoments() {
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 id="moments-title" className={styles.title}>
-            <span className="gradientTitle">A</span>{' '}
-            <em className={styles.titleEm}>glimpse</em>{' '}
-            <span className="gradientTitle">inside</span>
+            <span className="gradientTitle">Behind the</span>{' '}
+            <em className={styles.titleEm}>cosplay</em>
           </h2>
         </header>
 

@@ -21,7 +21,7 @@ export default function NotFound() {
         <h1 className={styles.title}>Page not found</h1>
         <p className={styles.lead}>
           This page doesn&apos;t exist or may have been moved. Head back home and claim your free
-          access to {SITE_NAME}&apos;s exclusive content.
+          access to {SITE_NAME}&apos;s exclusive cosplay world.
         </p>
 
         <div className={styles.actions}>

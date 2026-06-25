@@ -13,37 +13,37 @@ export const MOMENT_VIDEOS: MomentVideo[] = [
   {
     id: 'morning-pool',
     src: '/content/videos/preview/morning-by-the-pool.mp4',
-    caption: 'Slow morning today ☕',
+    caption: 'Pre-con calm before the chaos ☕',
     locked: false,
   },
   {
     id: 'sunset-balcony',
     src: '/content/videos/preview/sunset-on-the-balcony.mp4',
-    caption: 'Golden hour, just us 🌅',
+    caption: 'Golden hour, out of costume 🌅',
     locked: false,
   },
   {
     id: 'bedroom-mirror',
     src: '/content/videos/locked/bedroom-mirror-teaser.mp4',
-    caption: "Something I'd only share here",
+    caption: 'Character fitting — members only',
     locked: true,
   },
   {
     id: 'cosplay-bts',
     src: '/content/videos/locked/cosplay-behind-the-scenes.mp4',
-    caption: 'Behind the scenes 👀',
+    caption: 'Cosplay BTS: props & paint 👀',
     locked: true,
   },
   {
     id: 'late-night',
     src: '/content/videos/locked/late-night-private.mp4',
-    caption: 'Late night vibes only',
+    caption: 'Late-night roleplay vibes',
     locked: true,
   },
   {
     id: 'members-clip',
     src: '/content/videos/locked/members-only-clip.mp4',
-    caption: 'Full version inside',
+    caption: 'Full build reveal inside',
     locked: true,
   },
 ]

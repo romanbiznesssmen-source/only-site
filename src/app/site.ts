@@ -15,19 +15,23 @@ export const SITE_URL = normalizeSiteUrl(
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://only-site.vercel.app',
 )
 
-export const SITE_TITLE = `${SITE_NAME} | Free Exclusive Access`
+export const SITE_TITLE = `${SITE_NAME} | Cosplay & Exclusive Access`
 export const SITE_DESCRIPTION =
-  'Get free access to Nancy Ace\'s members-only content — personal photos, unfiltered moments, and direct messages. Free trial. No card required.'
+  'Octokuro — sexy cosplay creator from the geek world. Exclusive characters, roleplay, behind-the-scenes builds, and members-only content. Free trial. No card required.'
 
 export const SITE_KEYWORDS = [
-  'Nancy Ace',
-  'exclusive content',
+  'Octokuro',
+  'cosplay creator',
+  'geek girl',
+  'cosplay queen',
+  'hot nerd',
+  'Warhammer 40k',
+  'Dungeons and Dragons',
+  'exclusive cosplay',
+  'roleplay content',
   'members only',
   'free access',
-  'personal photos',
-  'creator',
-  'private content',
-  'free trial',
+  'convention crush',
 ]
 
 export const SITE_EMAIL = process.env.SITE_CONTACT_EMAIL ?? 'hello@example.com'
@@ -52,15 +56,21 @@ export const PRIVACY_POLICY_PATH = '/privacy'
 
 export const ACCESS_INCLUDES = [
   'Create your account in under a minute',
-  'Unlock members-only photos and videos',
-  'Message me directly — I read everything',
-  'New content added regularly',
+  'Unlock exclusive cosplay, roleplay, and behind-the-scenes content',
+  'Talk fandoms with me — I read and reply to everything',
+  'New characters and builds added regularly',
 ] as const
 
 export const SITE_FAQ = [
   { q: 'Is it really free?', a: 'Yes. You can start with free access — no card required to get in.' },
-  { q: 'What kind of content is inside?', a: 'Personal photos, unfiltered moments, and members-only updates you won\'t find anywhere else.' },
-  { q: 'Do you actually reply to messages?', a: 'Yes. I read everything and reply to members personally.' },
+  {
+    q: 'What kind of content is inside?',
+    a: 'Full cosplay characters, roleplay scenes, behind-the-scenes builds, 3D-print props, and members-only exclusives you won\'t find on social media.',
+  },
+  {
+    q: 'Do you actually reply to messages?',
+    a: 'Yes. I love geek talk as much as flirting — I read everything and reply personally.',
+  },
   { q: 'Can I cancel anytime?', a: 'Yes. You\'re free to leave whenever you want.' },
-  { q: 'How do I get access?', a: 'Tap Get Access, create an account, and you\'re in.' },
+  { q: 'How do I get access?', a: 'Tap Get Access, create an account, and step inside.' },
 ] as const

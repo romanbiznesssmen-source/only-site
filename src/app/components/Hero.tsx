@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import { CREATOR_NAME, HERO_COPY } from '../content/creator'
 import { SITE_HERO_IMAGE } from '../site'
 import PaymentButton from './PaymentButton'
 import styles from './Hero.module.css'
@@ -11,7 +12,7 @@ export default function Hero() {
         <div className={styles.bgFrame}>
           <Image
             src={SITE_HERO_IMAGE}
-            alt=""
+            alt={`${CREATOR_NAME} — cosplay creator`}
             fill
             priority
             sizes="100vw"
@@ -26,30 +27,27 @@ export default function Hero() {
           <div className={styles.textBlock}>
             <span className={styles.onlineBadge}>
               <span className={styles.onlineDot} aria-hidden="true" />
-              Online now
+              {HERO_COPY.badge}
             </span>
 
             <h1 className={styles.headline}>
-              <span className={styles.headlineLine}>You weren&apos;t supposed</span>
-              <span className={`${styles.headlineLine} ${styles.accent}`}>to find this.</span>
+              <span className={styles.headlineLine}>{HERO_COPY.headline[0]}</span>
+              <span className={`${styles.headlineLine} ${styles.accent}`}>{HERO_COPY.headline[1]}</span>
             </h1>
 
             <p className={styles.subhead}>
-              But since you&apos;re here&hellip;
+              {HERO_COPY.subhead[0]}
               <br />
-              I&apos;ll let you in.{' '}
-              <span className={styles.accent}>For free.</span>
+              <span className={styles.accent}>{HERO_COPY.subhead[1]}</span>
             </p>
           </div>
 
           <div className={styles.ctaBlock}>
             <PaymentButton className={`${styles.ctaButton} gradientCta`} aria-label="Claim free access">
               <span className={styles.ctaArrow} aria-hidden="true">→</span>
-              Claim Free Access
+              {HERO_COPY.cta}
             </PaymentButton>
-            <p className={styles.disclaimer}>
-              Free trial &middot; No card required &middot; Cancel anytime
-            </p>
+            <p className={styles.disclaimer}>{HERO_COPY.disclaimer}</p>
           </div>
         </div>
       </div>

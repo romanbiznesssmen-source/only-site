@@ -1,4 +1,9 @@
-import { CREATOR_NAME, INSIDE_FEATURES } from '../content/creator'
+import {
+  ABOUT_COPY,
+  ABOUT_EMPHASIS,
+  CREATOR_NAME,
+  INSIDE_FEATURES,
+} from '../content/creator'
 import styles from './AboutSection.module.css'
 
 export default function AboutSection() {
@@ -12,20 +17,10 @@ export default function AboutSection() {
             </h2>
           </header>
           <div className={styles.aboutCopy}>
-            <p>I don&apos;t post everything online.</p>
-            <p>
-              Instagram gets the highlights.
-              <br />
-              This place gets the rest.
-            </p>
-            <p>
-              Real mornings. Random thoughts.
-              <br />
-              Things I only share here - with people
-              <br />
-              I actually want around.
-            </p>
-            <p className={styles.aboutEmphasis}>No filters. No performance. Just me.</p>
+            {ABOUT_COPY.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <p className={styles.aboutEmphasis}>{ABOUT_EMPHASIS}</p>
             <p className={styles.signature}>&mdash; {CREATOR_NAME}</p>
           </div>
         </div>

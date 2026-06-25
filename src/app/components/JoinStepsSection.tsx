@@ -1,4 +1,4 @@
-import { JOIN_STEPS } from '../content/creator'
+import { JOIN_CLOSING, JOIN_STEPS } from '../content/creator'
 import PaymentButton from './PaymentButton'
 import styles from './JoinStepsSection.module.css'
 
@@ -23,20 +23,20 @@ export default function JoinStepsSection() {
         </ol>
 
         <div className={styles.closing}>
-          <p className={styles.closingLead}>I don&apos;t want everyone in here.</p>
+          <p className={styles.closingLead}>{JOIN_CLOSING.lead}</p>
           <p className={`${styles.closingSub} gradientTitle`}>
-            Just the ones who
+            {JOIN_CLOSING.highlight[0]}
             <br />
-            actually want to be.
+            {JOIN_CLOSING.highlight[1]}
           </p>
-          <p className={styles.closingQuestion}>Are you one of them?</p>
+          <p className={styles.closingQuestion}>{JOIN_CLOSING.question}</p>
         </div>
 
         <PaymentButton className={`${styles.cta} gradientCta`} aria-label="Yes, let me in">
           <span className={styles.ctaArrow} aria-hidden="true">→</span>
-          Yes. Let Me In.
+          {JOIN_CLOSING.cta}
         </PaymentButton>
-        <p className={styles.disclaimer}>Free access. Limited spots.</p>
+        <p className={styles.disclaimer}>{JOIN_CLOSING.disclaimer}</p>
       </div>
     </section>
   )

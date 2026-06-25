@@ -1,6 +1,6 @@
-# Nancy Ace — Landing Page
+# Octokuro — Landing Page
 
-Next.js 14 landing page with hero, video previews, payment flow, and members-only CTAs.
+Next.js 14 landing page for **Octokuro** — sexy cosplay creator from the geek world.
 
 ## Run locally
 

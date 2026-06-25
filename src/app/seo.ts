@@ -12,7 +12,7 @@ const ogImage = {
   url: SITE_HERO_IMAGE,
   width: 1200,
   height: 630,
-  alt: `${SITE_NAME} — exclusive members-only content`,
+  alt: `${SITE_NAME} — cosplay creator, exclusive members content`,
 }
 
 export const rootMetadata: Metadata = {
