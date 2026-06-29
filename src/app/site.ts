@@ -40,10 +40,9 @@ export const SITE_PHONE_DISPLAY = '+380 97 123 45 67'
 
 export const SITE_THEME_COLOR = '#00AFF0'
 
-export const ACCESS_PRICE = 490
-
-export const TELEGRAM_BOT_URL =
-  process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL ?? 'https://t.me/TeleBotsNowayrmBot'
+export const ACCESS_LINK =
+  process.env.NEXT_PUBLIC_ACCESS_LINK ??
+  'https://trk.of-traffic.com/go/01KW9BHKKESX6F9STJGD5B4NJX'
 
 export const SITE_NAV = [
   { href: '/#moments', label: 'Preview' },
@@ -53,13 +52,6 @@ export const SITE_NAV = [
 ] as const
 
 export const PRIVACY_POLICY_PATH = '/privacy'
-
-export const ACCESS_INCLUDES = [
-  'Create your account in under a minute',
-  'Unlock exclusive cosplay, roleplay, and behind-the-scenes content',
-  'Talk fandoms with me — I read and reply to everything',
-  'New characters and builds added regularly',
-] as const
 
 export const SITE_FAQ = [
   { q: 'Is it really free?', a: 'Yes. You can start with free access — no card required to get in.' },

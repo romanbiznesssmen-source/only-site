@@ -41,6 +41,10 @@
 }
 
 .marathon-page .gradientCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   background: var(--cta-gradient);
   color: #ffffff;
   box-shadow:

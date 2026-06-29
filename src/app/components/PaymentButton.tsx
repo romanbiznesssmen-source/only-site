@@ -1,7 +1,7 @@
 'use client'
 
-import { type MouseEvent, type ReactNode } from 'react'
-import { usePaymentModal } from './PaymentProvider'
+import { type ReactNode } from 'react'
+import { ACCESS_LINK } from '../site'
 
 type PaymentButtonProps = {
   className?: string
@@ -18,25 +18,22 @@ export default function PaymentButton({
   disabled,
   onBeforeOpen,
 }: PaymentButtonProps) {
-  const { openPaymentModal } = usePaymentModal()
-
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    if (disabled) return
-
-    onBeforeOpen?.()
-    openPaymentModal()
+  if (disabled) {
+    return (
+      <button type="button" className={className} disabled aria-label={ariaLabel}>
+        {children}
+      </button>
+    )
   }
 
   return (
-    <button
-      type="button"
+    <a
+      href={ACCESS_LINK}
       className={className}
-      onClick={handleClick}
-      disabled={disabled}
       aria-label={ariaLabel}
+      onClick={() => onBeforeOpen?.()}
     >
       {children}
-    </button>
+    </a>
   )
 }

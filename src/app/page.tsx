@@ -4,7 +4,6 @@ import RecentMoments from './components/RecentMoments'
 import AboutSection from './components/AboutSection'
 import JoinStepsSection from './components/JoinStepsSection'
 import FloatingCta from './components/FloatingCta'
-import { PaymentProvider } from './components/PaymentProvider'
 import StructuredData from './components/StructuredData'
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from './site'
 
@@ -16,17 +15,15 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <PaymentProvider>
-      <div className="marathon-page">
-        <StructuredData />
-        <main>
-          <Hero />
-          <RecentMoments />
-          <AboutSection />
-          <JoinStepsSection />
-        </main>
-        <FloatingCta />
-      </div>
-    </PaymentProvider>
+    <div className="marathon-page">
+      <StructuredData />
+      <main>
+        <Hero />
+        <RecentMoments />
+        <AboutSection />
+        <JoinStepsSection />
+      </main>
+      <FloatingCta />
+    </div>
   )
 }
